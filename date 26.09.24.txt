@@ -1,0 +1,68 @@
+#date: 26.09.24
+#Encapsulation
+class Demo():
+    name="Krups"
+    
+d=Demo()
+print(d.name)
+
+o/p:
+Krups
+-------------------------------------------------------------------------------------------------------------------------------------
+class Demo():
+    __name="Krups"
+    
+d=Demo()
+print(d.name)
+
+o/p:
+ERROR!
+Traceback (most recent call last):
+  File "<main.py>", line 5, in <module>
+AttributeError: 'Demo' object has no attribute 'name'
+----------------------------------------------------------------------------------------------------------------------------
+class Demo():
+    __name="Krups"     #to make the variable 'name' private
+    
+d=Demo()
+print(d.__name)
+
+o/p:
+ERROR!
+Traceback (most recent call last):
+  File "<main.py>", line 5, in <module>
+AttributeError: 'Demo' object has no attribute '__name'
+---------------------------------------------------------------------------------------------------------------------------------
+class Demo():
+    __name="Krups"     #to make the variable 'name' private
+    def __init__(self):
+        print(self.__name)
+d=Demo()
+
+o/p:
+Krups
+----------------------------------------------------------------------------------------------------------------------
+class Demo():
+    __name=""     #to make the variable 'name' private
+    def setSharu(self,name):
+        self.__name=name
+    def getSharu(self):
+        return self.__name
+        
+d=Demo()
+d.setSharu("Shraddha")
+print(d.getSharu())
+
+o/p:
+Shraddha
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+class Demo():
+    __name=""     #to make the variable 'name' private                             o/p:
+    def __init__(self,name):                       				   Krupesh
+        self.__name=name					    		   Krupu
+        print(self.__name)
+        self.__display()
+    def __display(self):
+        print("Krupu")
+d = Demo("Krupesh")        
+---------------------------------------------------------------------------------------------------------------------
